@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 import JobCard from "./JobCard";
 import { getUserMatches, acceptJob, rejectJob } from "../../API/";
-// import MockJobs from "../../API/mockData/jobs";
 
 const StyledJobList = styled.ul`
   list-style: none;
@@ -68,6 +68,10 @@ function JobCardList({ workerId }) {
       ))}
     </StyledJobList>
   );
+}
+
+JobCardList.propTypes = {
+  workerId: PropTypes.string
 }
 
 export default JobCardList;
